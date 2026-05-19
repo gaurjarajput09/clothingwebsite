@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import About from './About';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -131,6 +132,9 @@ const Home = () => {
           <p>Dedicated support</p>
         </div>
       </div>
+
+      {/* Embedded About Section */}
+      <About />
 
       <div className="newsletter-section">
         <div className="newsletter-content">

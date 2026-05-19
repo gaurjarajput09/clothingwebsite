@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <main className="about-main">
+    <div className="about-main" id="about">
       <div className="about-hero">
         <h1>About CasaWebClothing</h1>
         <p>Redefining Western Wear for the Modern Woman</p>
@@ -68,7 +68,7 @@ const About = () => {
           <p>Premium Quality</p>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 

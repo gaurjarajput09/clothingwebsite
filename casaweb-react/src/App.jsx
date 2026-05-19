@@ -9,6 +9,7 @@ import Wishlist from './pages/Wishlist';
 import About from './pages/About';
 import CartSidebar from './components/CartSidebar';
 import './index.css';
+import API_URL from './config';
 
 function AppContent() {
   const location = useLocation();
@@ -38,7 +39,7 @@ function AppContent() {
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const response = await fetch('http://127.0.0.1:5000/api/wishlist', {
+          const response = await fetch(`${API_URL}/api/wishlist`, {
             headers: { 'Authorization': `Bearer ${token}` }
           });
           if (response.ok) {
@@ -95,7 +96,7 @@ function AppContent() {
       // Sync with backend
       try {
         const method = exists ? 'DELETE' : 'POST';
-        const response = await fetch(`http://127.0.0.1:5000/api/wishlist/${product.id}`, {
+        const response = await fetch(`${API_URL}/api/wishlist/${product.id}`, {
           method,
           headers: { 'Authorization': `Bearer ${token}` }
         });

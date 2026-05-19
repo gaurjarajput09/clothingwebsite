@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
+import API_URL from '../config';
 
 const Products = ({ addToCart, toggleWishlist, wishlistItems }) => {
   const location = useLocation();
@@ -17,7 +18,7 @@ const Products = ({ addToCart, toggleWishlist, wishlistItems }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/products');
+        const response = await fetch(`${API_URL}/api/products`);
         const data = await response.json();
         // Map _id to id for frontend compatibility
         const formattedData = data.map(p => ({
