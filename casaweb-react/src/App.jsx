@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Wishlist from './pages/Wishlist';
 import About from './pages/About';
 import CartSidebar from './components/CartSidebar';
+import ChatBot from './components/ChatBot';
 import './index.css';
 import API_URL from './config';
 
@@ -176,6 +177,9 @@ function AppContent() {
         cartItems={cartItems}
         removeFromCart={removeFromCart}
       />
+      
+      {/* AI Chatbot Widget */}
+      <ChatBot />
     </div>
   );
 }
